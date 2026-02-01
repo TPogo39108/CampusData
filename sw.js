@@ -1,26 +1,23 @@
 
-const CACHE_NAME = 'campusdata-v2.2';
+const CACHE_NAME = 'campusdata-v3.0';
 const assetsToCache = [
   './',
   './index.html',
-  './manifest.json',
-  'https://cdn.tailwindcss.com',
-  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+  './manifest.json'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(assetsToCache).catch(err => console.warn('PWA Cache warning:', err));
+      return cache.addAll(assetsToCache).catch(err => console.warn('PWA Cache setup skip:', err));
     })
   );
 });
 
 self.addEventListener('fetch', event => {
+  // Netzwerk-Zuerst Strategie für TSX/TS Dateien wegen dynamischer Transpilierung
   event.respondWith(
-    caches.match(event.request).then(response => {
-      return response || fetch(event.request);
-    })
+    fetch(event.request).catch(() => caches.match(event.request))
   );
 });
 

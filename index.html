@@ -37,7 +37,9 @@
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #62baac; border-radius: 10px; }
     </style>
-<script type="importmap">
+
+    <!-- Import Map für externe Bibliotheken -->
+    <script type="importmap">
 {
   "imports": {
     "lucide-react": "https://esm.sh/lucide-react@0.460.0",
@@ -51,11 +53,17 @@
   }
 }
 </script>
+    
+    <!-- Browser-Transpiler für TSX Support auf statischen Hostern wie GitHub -->
+    <script type="module">
+        import "https://esm.sh/run";
+    </script>
 <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <div id="root"></div>
-    <script type="module" src="./index.tsx"></script>
+    <!-- Script Typ text/tsx wird von esm.sh/run verarbeitet -->
+    <script type="text/tsx" src="./index.tsx"></script>
 <script type="module" src="/index.tsx"></script>
 </body>
 </html>
