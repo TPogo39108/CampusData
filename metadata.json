@@ -1,0 +1,5 @@
+{
+  "name": "CampusData",
+  "description": "Eine professionelle PWA zur Verwaltung von Nutzerdaten, Rollenzuweisung und automatisierten Brief- sowie Tabellengenerierung für Lernplattformen.",
+  "requestFramePermissions": []
+}

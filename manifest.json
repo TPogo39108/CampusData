@@ -1,0 +1,16 @@
+
+{
+  "short_name": "CampusData",
+  "name": "CampusData Nutzer-Manager",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2991/2991148.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#006b5f",
+  "background_color": "#f8fafc"
+}
